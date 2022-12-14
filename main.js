@@ -1,12 +1,15 @@
 (() => {
-  const btnOne = document.querySelector('.btn-one');
+  const btns = document.querySelectorAll('.btn');
 
-  btnOne.addEventListener('click', () => {
-    if (btnOne.ariaExpanded === 'true') {
-      btnOne.ariaExpanded = false;
-    } else {
-      btnOne.ariaExpanded = true;
-    }
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      console.log('h')
+      if (btn.ariaExpanded === 'true') {
+        btn.ariaExpanded = false;
+      } else {
+        btn.ariaExpanded = true;
+      }
+    });
   });
 
 })();

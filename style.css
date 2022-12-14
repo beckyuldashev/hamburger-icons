@@ -2,7 +2,9 @@
   --button-color: #000;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -20,6 +22,13 @@ button {
   border-radius: 1rem;
   background-color: transparent;
   cursor: pointer;
+}
+
+.wrapper {
+  padding: 3rem;
+  max-width: 1200px;
+  display: flex;
+  gap: clamp(2rem, 8vw, 4rem);
 }
 
 .btn-one .line {
@@ -48,3 +57,70 @@ button {
   opacity: 0;
 }
 
+
+
+.btn-two {
+  --button-color: rgb(212, 69, 69);
+}
+
+.btn-two .line {
+  animation: to-open-icon 1s forwards;
+}
+
+
+.btn-two:hover .line {
+  stroke-dashoffset: 79.9;
+  animation: to-close-icon 1s forwards;
+}
+
+.btn-two .line.top {
+  --rotation: -45deg;
+  transform-origin: 65px 45px;
+}
+
+.btn-two .line.bottom {
+  --rotation: 45deg;
+  transform-origin: 60px 55px;
+}
+
+@keyframes to-open-icon {
+  0% {
+    stroke-dashoffset: 0;
+    rotate: var(--rotation);
+  }
+
+  40% {
+    stroke-dashoffset: 79.9;
+    rotate: var(--rotation);
+  }
+
+  60% {
+    stroke-dashoffset: 79.9;
+    
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    
+  }
+}
+
+@keyframes to-close-icon {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  40% {
+    stroke-dashoffset: 79.9;
+  }
+
+  60% {
+    stroke-dashoffset: 79.9;
+    rotate: var(--rotation);
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    rotate: var(--rotation);
+  }
+}
