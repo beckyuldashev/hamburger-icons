@@ -96,12 +96,12 @@ button {
 
   60% {
     stroke-dashoffset: 79.9;
-    
+
   }
 
   100% {
     stroke-dashoffset: 0;
-    
+
   }
 }
 
@@ -123,4 +123,30 @@ button {
     stroke-dashoffset: 0;
     rotate: var(--rotation);
   }
+}
+
+
+
+.btn-three {
+  --button-color: purple;
+  overflow: hidden;
+}
+
+.btn-three .line {
+  stroke-dasharray: 60 31 60 300;
+  transition: 1s;
+}
+
+.btn-three .hamburger {
+  transition: 1s;
+}
+
+.btn-three:hover .hamburger {
+  translate: 10px -20px;
+  rotate: 45deg;
+}
+
+.btn-three:hover .line {
+  stroke-dasharray: 60 105 60 300;
+  stroke-dashoffset: -90;
 }
