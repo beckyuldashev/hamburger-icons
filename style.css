@@ -36,24 +36,24 @@ button {
   transform-origin: center;
 }
 
-.btn-one[aria-expanded="true"] .line {
+.btn-one[data-state="opened"] .line {
   transition: y 300ms ease-in, rotate 300ms ease-in 300ms, opacity 0ms ease-in 300ms;
   transform-origin: center;
 }
 
-.btn-one[aria-expanded="true"] :is(.top, .bottom) {
+.btn-one[data-state="opened"] :is(.top, .bottom) {
   y: 45px;
 }
 
-.btn-one[aria-expanded="true"] .top {
+.btn-one[data-state="opened"] .top {
   rotate: 45deg;
 }
 
-.btn-one[aria-expanded="true"] .bottom {
+.btn-one[data-state="opened"] .bottom {
   rotate: -45deg;
 }
 
-.btn-one[aria-expanded="true"] .middle {
+.btn-one[data-state="opened"] .middle {
   opacity: 0;
 }
 
@@ -63,12 +63,12 @@ button {
   --button-color: rgb(212, 69, 69);
 }
 
-.btn-two .line {
+.btn-two[data-state="closed"] .line {
   animation: to-open-icon 1s forwards;
 }
 
 
-.btn-two:hover .line {
+.btn-two[data-state="opened"] .line {
   stroke-dashoffset: 79.9;
   animation: to-close-icon 1s forwards;
 }
@@ -141,12 +141,12 @@ button {
   transition: 1s;
 }
 
-.btn-three:hover .hamburger {
+.btn-three[data-state="opened"] .hamburger {
   translate: 10px -20px;
   rotate: 45deg;
 }
 
-.btn-three:hover .line {
+.btn-three[data-state="opened"] .line {
   stroke-dasharray: 60 105 60 300;
   stroke-dashoffset: -90;
 }

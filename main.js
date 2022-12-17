@@ -3,10 +3,13 @@
 
   btns.forEach(btn => {
     btn.addEventListener('click', () => {
-      console.log('h')
-      if (btn.ariaExpanded === 'true') {
+      const currentState = btn.getAttribute('data-state');
+
+      if (!currentState || currentState === 'closed') {
+        btn.setAttribute('data-state', 'opened');
         btn.ariaExpanded = false;
       } else {
+        btn.setAttribute('data-state', 'closed');
         btn.ariaExpanded = true;
       }
     });
